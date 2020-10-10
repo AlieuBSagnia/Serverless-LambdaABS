@@ -1,9 +1,11 @@
 
 def hello(event, context):
-    # TODO implement
     firstName = event['first']
-    
     lastName = event['last']
     
-    return 'Hello, ' + firstName + ' ' + lastName + '!'
+    if firstName == "" or lastName == "":
+        return 'Hello, you need to enter a first/last name'
+    else:
+        return f'Hello, {firstName} {lastName}!'
         #'statusCode': 200,
+
